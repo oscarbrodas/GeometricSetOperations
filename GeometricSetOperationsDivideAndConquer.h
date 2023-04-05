@@ -11,7 +11,7 @@ Point2D IntersectionDC(const Point2D& a, const Point2D& b);
 // Region2D IntersectionDC(const Region2D& a, const Region2D& b);
 
 // // Union
-// Point2D UnionDC(const Point2D& a, const Point2D& b);
+Point2D UnionDC(const Point2D& a, const Point2D& b);
 // Line2D UnionDC(const Line2D& a, const Line2D& b);
 // Region2D UnionDC(const Region2D& a, const Region2D& b);
 
