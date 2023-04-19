@@ -1735,6 +1735,42 @@ void test_PointDifferenceDC9()
 
     std::cout << std::endl;
 }
+
+void test_ObjectSweep()
+{
+
+    std::cout << "[Testing AttributedHalfSegment2D]" << endl;
+
+    Number one = "1.0";
+    Number two = "2.0";
+    Number three = "3.0";
+    Number four = "4.0";
+
+    SimplePoint2D pointA(one, one);
+    SimplePoint2D pointB(one,two);
+    SimplePoint2D pointC(two, one);
+    SimplePoint2D pointD(two, two);
+
+    // Segment objects for testing
+    Segment2D segA(pointA, pointB);
+    Segment2D segB(pointB, pointD);
+    Segment2D segC(pointD, pointC);
+    Segment2D segD(pointC, pointA);
+
+    Segment2D segE(pointB, pointC);
+
+
+    std::vector<Segment2D> ahsA = {segA, segB, segC, segD};
+    std::vector<Segment2D> ahsB = {segA, segE, segD};
+
+
+    Region2D a(ahsA);
+    Region2D b(ahsB);
+
+    IntersectionPS(a, b);
+
+}
+
 int main (void)
 {
     test_PointIntersectionDC1();
